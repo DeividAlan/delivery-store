@@ -4,28 +4,49 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
 
   nav {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
 
-    a {
-      width: 3rem;
-      height: 3rem;
+    button {
       display: flex;
+      padding: 0.5rem;
       justify-content: center;
       align-items: center;
-      /* color: ${props => props.theme['gray-100']}; */
+      gap: 0.25rem;
 
-      border-top: 3px solid transparent;
-      border-bottom: 3px solid transparent;
+      border-radius: 6px;
+      background: ${props => props.theme['purple-light']};
+      border: none;
 
-      &:hover {
-        /* border-bottom: 3px solid ${props => props.theme['green-500']}; */
+      & > svg {
+        fill: ${props => props.theme.purple};
       }
 
-      &.active {
-        /* color: ${props => props.theme['green-500']}; */
+      & > span {
+        font-family: Roboto;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        color: ${props => props.theme['purple-dark']};
+      }
+    }
+
+    a {
+      display: flex;
+      width: 2.375rem;
+      height: 2.375rem;
+      justify-content: center;
+      align-items: center;
+      background: ${props => props.theme['yellow-light']};
+      border-radius: 6px;
+
+      svg {
+        fill: ${props => props.theme['yellow-dark']};
       }
     }
   }
