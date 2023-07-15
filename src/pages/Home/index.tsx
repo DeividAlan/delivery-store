@@ -1,6 +1,12 @@
-import { BannerContainer, DeliveryInfo, HomeContainer } from './stules';
+import {
+  BannerContainer,
+  DeliveryInfo,
+  HomeContainer,
+  ProductListContainer,
+} from './styles';
 import bannerImage from '../../assets/banner-image.png';
 import { ShoppingCart } from '@phosphor-icons/react';
+import { Product } from './components/Product';
 
 export function Home() {
   return (
@@ -13,19 +19,19 @@ export function Home() {
             hora
           </p>
           <div>
-            <DeliveryInfo statusColor="yellow-dark">
+            <DeliveryInfo color="yellow-dark">
               <ShoppingCart weight="fill" size={32} />
               Compra simples e segura
             </DeliveryInfo>
-            <DeliveryInfo statusColor="base-text">
+            <DeliveryInfo color="base-text">
               <ShoppingCart weight="fill" size={32} />
               Embalagem mantém o café intacto
             </DeliveryInfo>
-            <DeliveryInfo statusColor="yellow">
+            <DeliveryInfo color="yellow">
               <ShoppingCart weight="fill" size={32} />
               Entrega rápida e rastreada
             </DeliveryInfo>
-            <DeliveryInfo statusColor="purple">
+            <DeliveryInfo color="purple">
               <ShoppingCart weight="fill" size={32} />O café chega fresquinho
               até você
             </DeliveryInfo>
@@ -33,6 +39,25 @@ export function Home() {
         </div>
         <img src={bannerImage} alt="coffee" />
       </BannerContainer>
+      <ProductListContainer>
+        <h1>Nossos cafés</h1>
+        <div>
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+        </div>
+      </ProductListContainer>
     </HomeContainer>
   );
 }
