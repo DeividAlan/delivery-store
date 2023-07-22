@@ -2,6 +2,7 @@ import { Minus, Plus, ShoppingCart } from '@phosphor-icons/react';
 import { ProductContainer, ProductTag } from './styles';
 import coffee01 from '../../../../assets/ProductsImage/coffee01.png';
 import { useState } from 'react';
+import { QuantityInput } from '../../../../components/QuantityInput';
 
 export function Product() {
   const [productQuantity, setProductQuantity] = useState(1);
@@ -39,20 +40,13 @@ export function Product() {
         <p>
           R$ <span>9,90</span>
         </p>
-        <div>
-          <button onClick={handleDecrease}>
-            <Minus size={14} />
-          </button>
-          <input
-            type="number"
-            value={productQuantity}
-            onChange={e => handleChangeInput(parseInt(e.target.value))}
-            min={1}
-          />
-          <button onClick={handleIncrease}>
-            <Plus size={14} />
-          </button>
-        </div>
+        <QuantityInput
+          handleDecrease={handleDecrease}
+          handleIncrease={handleIncrease}
+          value={productQuantity}
+          onChange={e => handleChangeInput(parseInt(e.target.value))}
+          min={1}
+        />
         <button>
           <ShoppingCart weight="fill" size={22} />
         </button>
